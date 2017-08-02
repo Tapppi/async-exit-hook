@@ -152,7 +152,6 @@ add.uncaughtExceptionHandler = function (hook) {
 	}
 };
 
-
 // Add an unhandled rejection handler
 add.unhandledRejectionHandler = function (hook) {
 	errHooks.push(hook);
