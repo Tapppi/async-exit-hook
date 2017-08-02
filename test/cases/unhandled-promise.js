@@ -14,13 +14,13 @@ exitHook(function () {
 	stub.called();
 });
 
-exitHook.uncaughtExceptionHandler(function (err, cb) {
+exitHook.unhandledRejectionHandler(function (err, cb) {
 	setTimeout(function () {
 		stub.called();
 		cb();
 	}, 50);
 	if (!err || err.message !== 'test-promise') {
-		stub.reject(`No error passed to uncaughtExceptionHandler, or message not test-promise - ${err.message}`);
+		stub.reject(`No error passed to unhandledRejectionHandler, or message not test-promise - ${err.message}`);
 	}
 	stub.called();
 });
