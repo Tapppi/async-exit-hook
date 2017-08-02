@@ -149,6 +149,15 @@ add.uncaughtExceptionHandler = function (hook) {
 
 	if (errHooks.length === 1) {
 		process.once('uncaughtException', exit.bind(null, true, 1));
+	}
+};
+
+
+// Add an unhandled rejection handler
+add.unhandledRejectionHandler = function (hook) {
+	errHooks.push(hook);
+
+	if (errHooks.length === 1) {
 		process.once('unhandledRejection', exit.bind(null, true, 1));
 	}
 };
