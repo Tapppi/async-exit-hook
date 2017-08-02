@@ -68,7 +68,7 @@ exitHook.uncaughtExceptionHandler(err => {
 });
 
 // You can hook unhandled rejections with unhandledRejectionHandler()
-exitHook.uncaughtExceptionHandler(err => {
+exitHook.unhandledRejectionHandler(err => {
     console.error(err);
 });
 
