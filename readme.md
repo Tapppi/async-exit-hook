@@ -67,6 +67,11 @@ exitHook.uncaughtExceptionHandler(err => {
     console.error(err);
 });
 
+// You can hook unhandled rejections with unhandledRejectionHandler()
+exitHook.uncaughtExceptionHandler(err => {
+    console.error(err);
+});
+
 // You can add multiple uncaught error handlers
 // Add the second parameter (callback) to indicate async hooks
 exitHook.uncaughtExceptionHandler((err, callback) => {
