@@ -82,7 +82,7 @@ console.log('Sent err to cloud');
         .catch(sendError => {
 console.error('Error sending to cloud: ', err.stack);
         })
-        .then(() => callback);
+        .then(callback);
 });
 
 // Add exit hooks for a signal or custom message:
